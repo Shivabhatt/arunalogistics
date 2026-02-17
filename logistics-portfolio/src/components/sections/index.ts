@@ -1,0 +1,9 @@
+export { default as Hero } from './Hero';
+export { default as Partners } from './Partners';
+export { default as Stats } from './Stats';
+export { default as Services } from './Services';
+export { default as WhyUs } from './WhyUs';
+export { default as Testimonials } from './Testimonials';
+export { default as CaseStudies } from './CaseStudies';
+export { default as FinalCTA } from './FinalCTA';
+export { default as Contact } from './Contact';
