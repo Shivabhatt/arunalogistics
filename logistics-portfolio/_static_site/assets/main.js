@@ -2,7 +2,7 @@
  * Aruna Logistics – main theme JS
  * Mobile menu toggle + header scroll effect
  */
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   /* ── Mobile Menu Toggle ─────────────────────────────────── */
@@ -12,7 +12,9 @@
   const iconClose = document.getElementById('menu-icon-close');
 
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', function () {
+    menuBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
       menuBtn.setAttribute('aria-expanded', String(!expanded));
       mobileMenu.classList.toggle('hidden');
@@ -20,6 +22,32 @@
         iconOpen.classList.toggle('hidden');
         iconClose.classList.toggle('hidden');
       }
+    });
+
+    /* Close menu when clicking outside */
+    document.addEventListener('click', function (e) {
+      if (!mobileMenu.classList.contains('hidden') &&
+          !mobileMenu.contains(e.target) &&
+          !menuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        if (iconOpen && iconClose) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      }
+    });
+
+    /* Close menu when a nav link is clicked */
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        if (iconOpen && iconClose) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
     });
   }
 
@@ -50,4 +78,4 @@
       }
     });
   });
-})();
+});
