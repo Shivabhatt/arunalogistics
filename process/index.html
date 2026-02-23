@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <title>How It Works - Aruna Logistics</title>
+  <link rel='stylesheet' href='../assets/style.css' type='text/css' media='all' />
+  <style>
+    /* Bottom slide-up mobile menu */
+    #mobile-menu-bottom {
+      transform: translateY(100%);
+      transition: transform 0.3s ease-out;
+    }
+    #mobile-menu-bottom.show {
+      transform: translateY(0);
+    }
+    .menu-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-out, visibility 0.3s;
+    }
+    .menu-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-white">
+
+<!-- Header -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-xl">A</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg font-bold text-slate-900 leading-tight">Aruna</span>
+          <span class="text-xs text-slate-500 -mt-0.5 tracking-wider uppercase">Logistics</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Home</a>
+        <a href="/about/" class="text-sm font-medium text-slate-600 hover:text-slate-900">About</a>
+        <a href="/services/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Services</a>
+        <a href="/pricing/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Pricing</a>
+        <a href="/contact/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Contact</a>
+      </nav>
+      <div class="hidden lg:flex items-center space-x-4">
+        <a href="/quote/" class="px-5 py-2.5 text-sm font-semibold rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition-colors">Get a Quote</a>
+      </div>
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu Overlay -->
+<div id="menu-overlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+
+<!-- Bottom Slide-Up Mobile Menu -->
+<div id="mobile-menu-bottom" class="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-3xl shadow-2xl lg:hidden">
+  <div class="flex justify-center pt-3 pb-2">
+    <div class="w-10 h-1 bg-slate-300 rounded-full"></div>
+  </div>
+  <div class="px-6 pb-8 pt-2 space-y-2">
+    <a href="/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+    <a href="/about/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      About
+    </a>
+    <a href="/services/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      Services
+    </a>
+    <a href="/pricing/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Pricing
+    </a>
+    <a href="/contact/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      Contact
+    </a>
+    <div class="pt-3">
+      <a href="/quote/" class="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold rounded-xl bg-orange-500 text-white">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Get a Quote
+      </a>
+    </div>
+  </div>
+</div>
+
+  <main class="pt-16">
+
+    <!-- Hero -->
+    <section class="bg-slate-900 py-20">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">How It Works</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Get started with Aruna Logistics in 4 simple steps. From signup to delivery, we make shipping effortless.</p>
+      </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+
+        <!-- Step 1 -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-xl">1</div>
+              <span class="text-sm font-medium text-orange-600 uppercase tracking-wider">Step One</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Sign Up & Get Started</h2>
+            <p class="text-lg text-slate-600 mb-6">Create your free account in under 2 minutes. No credit card required. Get instant access to our shipping dashboard and start exploring our services.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Free account setup
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                No minimum commitment
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Instant dashboard access
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80" 
+              alt="Business person using laptop"
+              class="rounded-2xl shadow-xl w-full"
+            />
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div class="order-2 lg:order-1">
+            <img 
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop&q=80" 
+              alt="Warehouse worker scanning package"
+              class="rounded-2xl shadow-xl w-full"
+            />
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-xl">2</div>
+              <span class="text-sm font-medium text-orange-600 uppercase tracking-wider">Step Two</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Schedule a Pickup</h2>
+            <p class="text-lg text-slate-600 mb-6">Enter your shipment details, select a service, and schedule a pickup. Our courier partner will arrive at your doorstep at your preferred time.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Easy shipment booking
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Flexible pickup slots
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Auto-generated shipping labels
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-xl">3</div>
+              <span class="text-sm font-medium text-orange-600 uppercase tracking-wider">Step Three</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">We Ship Your Package</h2>
+            <p class="text-lg text-slate-600 mb-6">Once picked up, your package enters our optimized logistics network. We automatically select the best route for fastest delivery at the lowest cost.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                AI-powered route optimization
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                50+ carrier partners
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Real-time tracking updates
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img 
+              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=400&fit=crop&q=80" 
+              alt="Delivery truck on road"
+              class="rounded-2xl shadow-xl w-full"
+            />
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <img 
+              src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=600&h=400&fit=crop&q=80" 
+              alt="Happy customer receiving package"
+              class="rounded-2xl shadow-xl w-full"
+            />
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-xl">4</div>
+              <span class="text-sm font-medium text-orange-600 uppercase tracking-wider">Step Four</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Package Delivered</h2>
+            <p class="text-lg text-slate-600 mb-6">Your customer receives the package with a smile. Get instant delivery confirmation with proof of delivery including photo and signature.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                99.5% on-time delivery rate
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Photo proof of delivery
+              </li>
+              <li class="flex items-center gap-3 text-slate-700">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Customer signature capture
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Easy Integration</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">Connect your e-commerce platform in minutes with our simple API and pre-built integrations.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+            <div class="w-16 h-16 mx-auto mb-6 bg-orange-100 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">REST API</h3>
+            <p class="text-slate-600">Full-featured API with comprehensive documentation. Build custom integrations for your platform.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+            <div class="w-16 h-16 mx-auto mb-6 bg-orange-100 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">E-commerce Plugins</h3>
+            <p class="text-slate-600">Ready-to-use plugins for Shopify, WooCommerce, Magento, and other popular platforms.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+            <div class="w-16 h-16 mx-auto mb-6 bg-orange-100 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Bulk Upload</h3>
+            <p class="text-slate-600">Upload orders via CSV or Excel files. Perfect for businesses processing high volumes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-orange-500">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Ready to get started?</h2>
+        <p class="text-orange-100 mb-8 text-lg">Join 500+ businesses already shipping with Aruna Logistics.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/quote/" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg bg-white text-orange-600 hover:bg-orange-50 transition-colors">
+            Get a Free Quote
+          </a>
+          <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg border-2 border-white text-white hover:bg-orange-600 transition-colors">
+            Talk to Sales
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-xl">A</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-lg font-bold text-white leading-tight">Aruna</span>
+              <span class="text-xs text-slate-400 -mt-0.5 tracking-wider uppercase">Logistics</span>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm">India's trusted logistics partner for businesses of all sizes.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Services</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li><a href="/services/" class="hover:text-white">Express Parcel</a></li>
+            <li><a href="/services/" class="hover:text-white">Freight Services</a></li>
+            <li><a href="/services/" class="hover:text-white">Warehousing</a></li>
+            <li><a href="/services/" class="hover:text-white">International</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li><a href="/about/" class="hover:text-white">About Us</a></li>
+            <li><a href="/pricing/" class="hover:text-white">Pricing</a></li>
+            <li><a href="/contact/" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li>support@arunalogistics.com</li>
+            <li>1800-XXX-XXXX</li>
+            <li>Mumbai, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Aruna Logistics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Bottom slide-up menu logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu-bottom');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    function openMenu() {
+      mobileMenu.classList.add('show');
+      menuOverlay.classList.add('show');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('show');
+      menuOverlay.classList.remove('show');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 50) {
+        header.classList.add('shadow-lg');
+      } else {
+        header.classList.remove('shadow-lg');
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>

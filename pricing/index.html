@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <title>Pricing - Aruna Logistics</title>
+  <link rel='stylesheet' href='../assets/style.css' type='text/css' media='all' />
+  <style>
+    #mobile-menu-bottom {
+      transform: translateY(100%);
+      transition: transform 0.3s ease-out;
+    }
+    #mobile-menu-bottom.show {
+      transform: translateY(0);
+    }
+    .menu-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-out, visibility 0.3s;
+    }
+    .menu-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-white">
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-xl">A</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg font-bold text-slate-900 leading-tight">Aruna</span>
+          <span class="text-xs text-slate-500 -mt-0.5 tracking-wider uppercase">Logistics</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Home</a>
+        <a href="/about/" class="text-sm font-medium text-slate-600 hover:text-slate-900">About</a>
+        <a href="/services/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Services</a>
+        <a href="/pricing/" class="text-sm font-medium text-orange-600">Pricing</a>
+        <a href="/contact/" class="text-sm font-medium text-slate-600 hover:text-slate-900">Contact</a>
+      </nav>
+      <div class="hidden lg:flex items-center space-x-4">
+        <a href="/quote/" class="px-5 py-2.5 text-sm font-semibold rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition-colors">Get a Quote</a>
+      </div>
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="menu-overlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+
+<div id="mobile-menu-bottom" class="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-3xl shadow-2xl lg:hidden">
+  <div class="flex justify-center pt-3 pb-2">
+    <div class="w-10 h-1 bg-slate-300 rounded-full"></div>
+  </div>
+  <div class="px-6 pb-8 pt-2 space-y-2">
+    <a href="/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+    <a href="/about/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      About
+    </a>
+    <a href="/services/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      Services
+    </a>
+    <a href="/pricing/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-orange-600 bg-orange-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Pricing
+    </a>
+    <a href="/contact/" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      Contact
+    </a>
+    <div class="pt-3">
+      <a href="/quote/" class="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold rounded-xl bg-orange-500 text-white">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Get a Quote
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="pt-16">
+  <section class="relative pt-16 pb-20 bg-gradient-to-br from-slate-900 via-slate-900 to-purple-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="pGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#pGrid)"/>
+      </svg>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Simple, <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-400">Transparent Pricing</span></h1>
+      <p class="text-xl text-slate-300 mb-8">Choose the plan that fits your business. All plans include our core features with no hidden fees.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="relative bg-white rounded-2xl border border-slate-200 shadow-sm p-8 hover:shadow-lg transition-all duration-300">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 text-3xl bg-gradient-to-br from-slate-100 to-slate-200">⚡</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Starter</h3>
+            <p class="text-slate-600 mb-4">Perfect for small businesses</p>
+            <div class="mb-6"><span class="text-5xl font-bold text-slate-900">₹2,999</span><span class="text-slate-600">/month</span></div>
+          </div>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Up to 100 shipments/month</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Standard shipping rates</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Basic tracking</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Email support</span></div>
+          </div>
+          <a href="/quote/" class="block w-full text-center px-6 py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:border-orange-500 hover:text-orange-600 transition-colors">Get Started</a>
+        </div>
+        <div class="relative bg-gradient-to-b from-orange-50 to-white rounded-2xl border-2 border-orange-500 shadow-xl p-8 scale-105">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2"><span class="px-4 py-1 bg-orange-500 text-white text-sm font-semibold rounded-full">Most Popular</span></div>
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 text-3xl bg-gradient-to-br from-orange-100 to-orange-200">🚀</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Professional</h3>
+            <p class="text-slate-600 mb-4">For growing businesses</p>
+            <div class="mb-6"><span class="text-5xl font-bold text-slate-900">₹7,999</span><span class="text-slate-600">/month</span></div>
+          </div>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Up to 500 shipments/month</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Discounted shipping rates</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Real-time tracking</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Priority support</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">API access</span></div>
+          </div>
+          <a href="/quote/" class="block w-full text-center px-6 py-3 rounded-xl bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors shadow-lg">Get Started</a>
+        </div>
+        <div class="relative bg-white rounded-2xl border border-slate-200 shadow-sm p-8 hover:shadow-lg transition-all duration-300">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 text-3xl bg-gradient-to-br from-purple-100 to-purple-200">🏢</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+            <p class="text-slate-600 mb-4">Custom solutions</p>
+            <div class="mb-6"><span class="text-5xl font-bold text-slate-900">Custom</span></div>
+          </div>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Unlimited shipments</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Custom pricing</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">Dedicated manager</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">24/7 support</span></div>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-600">White-label</span></div>
+          </div>
+          <a href="/contact/" class="block w-full text-center px-6 py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:border-orange-500 hover:text-orange-600 transition-colors">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-2">Can I switch plans anytime?</h3>
+          <p class="text-slate-600">Yes, you can upgrade or downgrade your plan at any time.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-2">Is there a free trial?</h3>
+          <p class="text-slate-600">Yes, all plans come with a 14-day free trial.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-2">What payment methods do you accept?</h3>
+          <p class="text-slate-600">We accept credit cards, UPI, net banking, and bank transfers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-orange-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to get started?</h2>
+      <p class="text-orange-100 mb-6">Start shipping smarter with Aruna Logistics today.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/quote/" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg bg-white text-orange-600 hover:bg-orange-50 transition-colors">Get Free Quote</a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg border border-white text-white hover:bg-orange-600 transition-colors">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-slate-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"><span class="text-white font-bold text-xl">A</span></div>
+          <div class="flex flex-col"><span class="text-lg font-bold text-white leading-tight">Aruna</span><span class="text-xs text-slate-400 -mt-0.5 tracking-wider uppercase">Logistics</span></div>
+        </div>
+        <p class="text-slate-400 text-sm">India's trusted logistics partner.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">Services</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="/services/" class="hover:text-white">Express Parcel</a></li>
+          <li><a href="/services/" class="hover:text-white">Freight</a></li>
+          <li><a href="/services/" class="hover:text-white">Warehousing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">Company</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="/about/" class="hover:text-white">About Us</a></li>
+          <li><a href="/pricing/" class="hover:text-white">Pricing</a></li>
+          <li><a href="/contact/" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">Contact</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li>support@arunalogistics.com</li>
+          <li>1800-XXX-XXXX</li>
+          <li>Mumbai, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-slate-500 text-sm">© 2026 Aruna Logistics. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-slate-500 hover:text-slate-300 text-sm">Privacy Policy</a>
+        <a href="#" class="text-slate-500 hover:text-slate-300 text-sm">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu-bottom');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function openMenu() {
+    mobileMenu.classList.add('show');
+    menuOverlay.classList.add('show');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('show');
+    menuOverlay.classList.remove('show');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+    if (isOpen) { closeMenu(); } else { openMenu(); }
+  });
+
+  menuOverlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 50) { header.classList.add('shadow-lg'); } else { header.classList.remove('shadow-lg'); }
+  }, { passive: true });
+</script>
+</body>
+</html>
